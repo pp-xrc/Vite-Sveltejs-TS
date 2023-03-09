@@ -1,26 +1,7 @@
-<script lang="ts">
-  import { todos } from '@/store'
-  import AddTodo from '@/pages/AddTodo.svelte'
-  import Todo from '@/pages/Todo.svelte'
+<script>
+  import Router from 'svelte-spa-router'
+  import routes from '@/router'
 </script>
 
-<div class="main">
-  <div class="content">
-    {#each $todos as todo, i (todo.id)}
-      <Todo {...todo} />
-    {/each}
-  </div>
-  <AddTodo />
-</div>
-
-<style lang="scss">
-  .main {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    .content {
-      flex: 1;
-      overflow: auto;
-    }
-  }
-</style>
+<!-- 挂载路由 -->
+<Router {routes} />
