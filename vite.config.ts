@@ -10,14 +10,6 @@ export default defineConfig({
     svelte({
       /* ... */
       preprocess: sveltePreprocess(),
-      onwarn: (warning, defaultHandler) => {
-        // don't warn on <marquee> elements, cos they're cool
-        if (warning.code === 'a11y-distracting-elements') return;
-        if (warning.code === 'a11y-click-events-have-key-events') return;
-    
-        // handle all other warnings normally
-        defaultHandler(warning);
-      },
     }),
     // gzip压缩 生产环境生成 .gz 文件
     viteCompression({

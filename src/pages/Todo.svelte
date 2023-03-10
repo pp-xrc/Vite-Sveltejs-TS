@@ -18,7 +18,8 @@
 </script>
 
 <div class="todo-page">
-  <span class="del-btn" on:click={handleDelete(id)}>X</span>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <span class="del-btn" on:click={() => handleDelete(id)}>X</span>
   <h2 class="title">
     <span>{title}</span>
   </h2>

@@ -16,17 +16,4 @@ This template should help get you started developing with Svelte and TypeScript 
 
 1.main.ts 提示找不到模块“xxx”或其相应的 xxx 类型声明，暂未找到解决办法！！！
 
-## svelte 报错
 
-提示： A11y: visible, non-interactive elements with an on:click event must be accompanied by an on:keydown, on:keyup, or on:keypress event.
-#509
-
-1.在 vite.config.ts 添加配置
-svelte({
-onwarn: (warning, defaultHandler) => {
-if (warning.code === 'a11y-distracting-elements') return;
-if (warning.code === 'a11y-click-events-have-key-events') return;
-defaultHandler(warning);
-},
-}),
-"# Vite-Sveltejs-TS" 
